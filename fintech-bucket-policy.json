@@ -1,0 +1,33 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowAccessFromSpecificIP",
+            "Effect": "Allow",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::fintech-financial-records",
+                "arn:aws:s3:::fintech-financial-records/*"
+            ],
+            "Condition": {
+                "IpAddress": {
+                    "aws:SourceIp": "198.51.100.0/24"
+                }
+            }
+        },
+        {
+            "Sid": "RestrictAccessToFraudDetectionRole",
+            "Effect": "Deny",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::fintech-financial-records",
+                "arn:aws:s3:::fintech-financial-records/*"
+            ],
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:PrincipalTag/role": "fraud_detection"
+                }
+            }
+        }
+    ]
+}

@@ -14,6 +14,8 @@ Additionally, encryption can be applied to protect data at rest, further ensurin
 - **S3 Bucket for Financial Records**: Securely store financial transaction data in S3, with access strictly controlled.
 - **IAM Roles and Policies**: Implement IAM roles and permissions to grant specific access to authorized personnel, such as fraud detection teams or finance department members.
 - **Bucket Policy**: Apply S3 bucket policies to enforce access control based on user roles and IP address ranges.
+---
+
 ![image](https://github.com/user-attachments/assets/9157e1a8-4f8a-41c3-b2e2-347e4c3daae3)
 
 
